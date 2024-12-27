@@ -1,0 +1,28 @@
+Loggbok memoryspelet:
+Började med att kolla igenom projektet för att se hur vad som fanns att jobba med.
+Gjorde "flip" möjligt genom att skapa en ”vända på kort funktion”, och lägga till classList.toggle för att toggla flip. Ändrade även visibility på några CSS egenskaper.
+Gjorde en for loop som lägger till eventlistner med ”vända på kort funktionen” funktion på alla kort.
+Skapade en eventlistner för börja om knappen och la in vända på kort funktionen, alltså måste man trycka på starta om för att påbörja ett spel.
+La även till en classList.remove i tidigarenämnda for loop för att kunna vända tillbaka korten när man trycker på börja om.
+Skapade select i html för tiden i sekunder
+la till options 15 sek 30 sek och 60 sek.
+Började göra en timerfunktion och la till ”value” i select options i html för att programmet ska få ett värde på respektive val (15, 30 och 60) .  Skapade en if sats med en for loop i som säger ifall tiden är 0 vänd alla kort och ta bort eventlistner på alla kort, detta gör så att spelet ej går att fortsätta spela och börjas om när tiden är slut.
+La sedan till timerfunktionen längst ner i starta om knappens eventlistner. 
+Skapade en Array av alla ”back views img” alltså 12 stycken imgs ( då det finns dubbletter av alla)
+Skapade en shufflefunktion som lagras i en variabel som använder en for each loop för att uppdatera alla bild element på ”back-view” i slumpmässig ordning. La till denna funktion högst upp i starta om knappens eventlistner vilket gör så att alla kort blandas varje gång man trycker på knappen. 
+Nu börjar man se framsteg i programmet….
+Skapade en funktion för matchande kort, genom att skapa 2 olika variabler och sätta deras värde till null, för att sedan genom en if sats kontrollera ifall variabel 1 värde är null, lagra kortet här annars lagra kortet i variabel 2. Sedan kontrollerar programmet ifall båda bilderna har samma back view IMG namn, och ifall så är fallet tas även Evenlistner bort från de matchande korten, för att förhindra att kortet vänds igen.  Om inte bilderna har samma back view IMG namn tas flip funktionen bort och bilderna vänds igen.
+Nu är det bara ”Antal” kvar att fixa men programmet har en hel del buggar som jag vill försöka lösa först.
+Man kan fuska genom att trycka på samma kort flera gånger för att få en ”match” detta löste jag genom att göra en if sats i vända på kort funktionen som frågar om denna evenlistner click är samma som variabel 1 och isåfall return. Ett annat problem var att  man kunde öppna fler än 2 kort samtidigt. Detta löstes genom en timer på 0.5 sekunder ifall kortet inte matchar. Det som händer när korten inte matchar nu är att körs en for loop som tar bort eventlistner på alla kort vilket gör det omöjligt att klicka upp ett tredje kort, för att 0.5 sekunder senare vända korten och lägga till eventlistner igen. Då uppstod problemet med att alla matchande kort plötsligt gick att vända igen, eftersom de nu hade eventlistner pga av loopen. Detta problem löstes genom att skapa en array där alla matchande kort läggs in i som kontrolleras i vända på kort funktionen, om eventhandlerklicket innehåller något ifrån denna array: return.
+Eftersom jag nu även har en array där alla matchande kort ligger i kan jag använda denna för att ändra ”Antals” inner html till halva denna array vilket motsvarar hur många kort som man lyckats parat.
+La till en if sats i timer funktionen som ändrar texten till ”DU VANN” ifall arrayen med matchande kort är lika med 12.
+
+
+
+ 
+
+
+
+
+
+
