@@ -23,7 +23,7 @@ for (const card of cards) {
    timeSelect();
    
 });
-document.getElementById("score").innerHTML = "Antal: " + (matchedCards.length/2)
+
 
 
 //funktioner 
