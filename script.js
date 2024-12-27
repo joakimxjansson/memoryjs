@@ -1,9 +1,8 @@
 const reStart = document.getElementById("restart");
-const cards = [...document.querySelectorAll('.card')]
+const cards = document.querySelectorAll('.card');
 let card1= null;
 let card2= null;
 let timer = null;
-let score = 0;
 let matchedCards = [];
 let imageArray = [
     "img/img1.jpg", "img/img2.jpg", "img/img3.jpg", "img/img4.jpg", "img/img5.jpg", "img/img6.jpg",
